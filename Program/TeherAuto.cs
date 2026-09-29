@@ -6,8 +6,44 @@ namespace Program
 {
     public class TeherAuto : Jarmu
     {
-        public TeherAuto(string rendszam, int kor, int kilometerOra, int uzemanyagSzint) : base(rendszam, kor, kilometerOra, uzemanyagSzint)
+        private int rakomany;
+
+        public int Rakomany
         {
+            get { return rakomany; }
+            set
+            {
+                if (value < 0)
+                {
+                    rakomany = 0;
+                }
+                else if (value > 20)
+                {
+                    rakomany = 20;
+                }
+                else
+                {
+                    rakomany = value;
+                }
+            }
+        }
+
+        public TeherAuto(string rendszam, int kor, int kilometerOra, int uzemanyagSzint, int rakomany)
+            : base(rendszam, kor, kilometerOra, uzemanyagSzint)
+        {
+            Rakomany = rakomany;
+        }
+
+        public override void InformaciotAd()
+        {
+            Console.WriteLine($"{Rendszam} - {Kor} éves teherautó, {KilometerOra} km-rel, rakomány: {Rakomany} tonna");
+        }
+
+        public override void Szervizel(int dij)
+        {
+            Rakomany = 0;
+
+            base.Szervizel(dij);
         }
     }
 }
