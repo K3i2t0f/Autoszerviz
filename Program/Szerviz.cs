@@ -6,6 +6,9 @@ namespace Program
 {
     public class Szerviz
     {
+        public Szerviz()
+        {
 
+        }
     }
 }
