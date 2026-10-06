@@ -199,5 +199,17 @@ namespace Tesztek
             Assert.That(auto.KilometerOra, Is.EqualTo(190000));
             Assert.That(auto.AkkumulatorSzint, Is.EqualTo(70));
         }
+
+
+        ///-------------------------
+        ///ÚjAuto tesztek
+        ///-------------------------
+        
+        [Test]
+        public void UjAuto_Hengerurtartalom_KorlatokKozottMarad()
+        {
+            UjAuto auto = new UjAuto("NEW-123", 1, 1000, 50, -500);
+            Assert.That(auto.Hengerurtartalom, Is.EqualTo(0));
+        }
     }
 }
