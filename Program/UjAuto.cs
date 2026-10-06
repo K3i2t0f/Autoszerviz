@@ -27,7 +27,7 @@ namespace Program
                     }
                     else if (value >= 3000)
                     {
-                        Console.WriteLine("az autó 8 hemgeres");
+                        Console.WriteLine("az autó 8 hemgeres vaaagy több");
                     }
                     else
                     {

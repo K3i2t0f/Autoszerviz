@@ -39,14 +39,15 @@ namespace Program
             Console.WriteLine($"{Rendszam} - {Kor} éves elektromos autó, {KilometerOra} km-rel, {AkkumulatorSzint} % töltöttséggel.");
         }
 
-        public new void Szervizel(int dij)
+        public override void Szervizel(int dij)
         {
             if (dij > 100000)
             {
                 KilometerOra -= 10000;
             }
 
-            AkkumulatorSzint += 20;
+
+            this.akkumulatorSzint += 20;
 
             Console.WriteLine("A jármű szervizelése megtörtént.");
         }
